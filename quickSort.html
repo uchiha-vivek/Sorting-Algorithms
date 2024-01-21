@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quickSort</title>
+
+</head>
+<script>
+    
+    function quickSort(arr){
+        if(arr.length <=1) return arr // if the array contains olny one element arr=[2]
+
+        let pivot = arr[arr.length-1] // last index value
+
+        let leftArr= []// making it empty
+
+        let rightArr= [] // making it empty
+
+        // Begining of the loop
+        // Time Complexity  O(nlogn)
+        // Space Complexity O(n)
+        for(let i=0 ; i<arr.length-1; i++){
+            if(arr[i] < pivot){
+                leftArr.push(arr[i])
+            }
+            else{
+                rightArr.push(arr[i])
+            }
+        }
+        if(leftArr.length >0 && rightArr.length >0){
+         return [...quickSort(leftArr),pivot,...quickSort(rightArr)]
+        } else if(leftArr.length >0){
+            return[...quickSort(leftArr),pivot]
+
+        }else{
+         return[pivot,...quickSort(rightArr)]
+        }
+
+    }
+    data=[3,1,6,2,5]
+    const viv = quickSort(data)
+    console.warn(viv)
+</script>
+<body>
+    
+</body>
+</html>

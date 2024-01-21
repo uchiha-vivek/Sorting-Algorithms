@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Sort</title>
+</head>
+<script>
+    function insertionSort(arr){
+        //assuming that the first element is sorted
+        //Time complexity is O(n^2)
+        //space complexity is  O(1)
+            for(let i=1; i<arr.length; i++){
+                for( let j = i ; j>=0;j--){
+                    if(arr[j] < arr[j-1] ){
+                        [arr[j], arr[j-1]] = [arr[j-1],arr[j]]
+
+                    }
+                }
+            }
+            return arr
+    }
+    data=[3,1,6,2,5]
+    const viv = insertionSort(data)
+    console.warn(viv)
+</script>
+<body>
+    
+</body>
+</html>
